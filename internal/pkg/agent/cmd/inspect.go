@@ -456,7 +456,7 @@ func getConfigWithVariables(ctx context.Context, l *logger.Logger, cfgPath strin
 		}
 		err = transpiler.Insert(ast, unrenderedInputs, "unrendered_inputs")
 		if err != nil {
-			return nil, lvl, fmt.Errorf("inserting unrendered inputs failed: %w", err)
+			return nil, nil, lvl, fmt.Errorf("inserting unrendered inputs failed: %w", err)
 		}
 	}
 	m, err = ast.Map()
